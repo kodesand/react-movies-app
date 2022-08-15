@@ -66,6 +66,7 @@ h1 {
   outline: none;
   color: #a1a1a1;
   background: #1f2123;
+  z-index: 1000;
 }
 
 .search img {
