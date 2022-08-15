@@ -9,8 +9,7 @@ const movie1 = {
   Year: '2007',
   imdbID: 'tt2705436',
   Type: 'movie',
-  Poster:
-    'https://m.media-amazon.com/images/M/MV5BYjFhN2RjZTctMzA2Ni00NzE2LWJmYjMtNDAyYTllOTkyMmY3XkEyXkFqcGdeQXVyNTA0OTU0OTQ@._V1_SX300.jpg',
+  Poster: 'N/A',
 }
 
 const App = () => {
@@ -38,7 +37,23 @@ const App = () => {
         />
         <img src={SearchIcon} alt='search' onClick={() => {}} />
       </div>
-      <div className='container'></div>
+
+      <div className='container'>
+        <div className='movie'>
+          <div>
+            <p>{movie1.Year}</p>
+          </div>
+
+          <div>
+            <img src={'https://via.placeholder.com/400'} alt={movie1.Title} />
+          </div>
+
+          <div>
+            <span>{movie1.Type}</span>
+            <h3>{movie1.Title}</h3>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
