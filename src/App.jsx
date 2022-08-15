@@ -1,3 +1,7 @@
+import './index.css'
+
+// adc9f17d
+
 const App = () => {
   return (
     <>
