@@ -5,17 +5,16 @@ import MovieCard from './components/MovieCard'
 
 const API_URL = 'http://www.omdbapi.com?apikey=adc9f17d'
 
-const movie1 = {
-  Title: 'Italian Spiderman',
-  Year: '2007',
-  imdbID: 'tt2705436',
-  Type: 'movie',
-  Poster: 'N/A',
-}
+// const movie1 = {
+//   Title: 'Italian Spiderman',
+//   Year: '2007',
+//   imdbID: 'tt2705436',
+//   Type: 'movie',
+//   Poster: 'N/A',
+// }
 
 const App = () => {
-  const [movie, setMovie] = useState([])
-
+  const [movies, setMovies] = useState([])
   const searchMovies = async (title) => {
     const response = await fetch(`${API_URL}&s=${title}`)
     const data = await response.json()
@@ -40,9 +39,11 @@ const App = () => {
         <img src={SearchIcon} alt='search' onClick={() => {}} />
       </div>
 
-      {movies.length > 0 ? (
+      {movies?.length > 0 ? (
         <div className='container'>
-          <MovieCard movie1={movie1} />
+          {movies.map((movie) => (
+            <MovieCard movie={movie} />
+          ))}
         </div>
       ) : (
         <div className='empty'>
